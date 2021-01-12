@@ -19,13 +19,70 @@
             border-bottom: solid 3px whitesmoke;
         }
 
-        .delete {
-            padding-left: 10px;
-        }
-
         .remove {
             background-color: red;
             color: white;
+        }
+
+        a {
+            font-size: 20px;
+            color: gray;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+
+
+
+
+        h1 {
+            font-size: 25pt;
+            color: darkslategrey;
+        }
+
+        p {
+            font-size: 15pt;
+        }
+
+        .btn {
+            border-radius: 5pt;
+            font-size: 20px;
+            margin: 10px 0 0 20px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn:hover {
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+
+
+        .frame {
+            float: center;
+            height: 400px;
+            padding: 10px;
+
+        }
+
+        .board-frame {
+            height: 250px;
+            margin: 30px;
+        }
+
+        .user-title {
+            font-size: 40px;
+        }
+
+        .comment {
+            font-size: 30px;
+        }
+
+        .author {
+            font-size: 20px;
         }
     </style>
 </head>

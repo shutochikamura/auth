@@ -7,17 +7,17 @@
             <div class="panel panel-default">
 
                 @foreach($items as $item)
-                <div class="card-body">
+                <div class="card-body board-frame">
                     <table>
                         <tr>
-                            <th>{{$item->title}}</th>
+                            <th class="user-title">{{$item->title}}</th>
                         </tr>
                         <tr>
-                            <th>{{$item->comment}}</th>
+                            <th class=" comment">{{$item->comment}}</th>
                         </tr>
                         <tr>
 
-                            <th>投稿者：{{$item->getData()}}</th>
+                            <th class="author">投稿者：{{$item->getData()}}</th>
                             @if($item->getData() == Auth::user()->name)
                             <td>
                                 <form action="/board/edit/{{$item->id}}" method="post">
@@ -33,9 +33,6 @@
                             </td>
                             @endif
                         </tr>
-
-
-
                     </table>
                 </div>
                 @endforeach
