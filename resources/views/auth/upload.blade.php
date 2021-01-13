@@ -15,9 +15,9 @@
                 @endif
 
                 <div class="input-group">
-                    <form action="/upload" method="post">
-                        {{ csrf_field() }}
-                        <input class="textarea" type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                    <form action="/board" method="post">
+                        {{csrf_field()}}
+                        <input class="textarea" type="hidden" name="user_id" value="{{Auth::id()}}">
                         <h2>タイトル</h2>
                         <input class="form-control" type="text" name="title" value="{{old('title')}}">
                         <h2>コンテンツ</h2>

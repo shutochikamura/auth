@@ -117,8 +117,8 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        <li><a href="/index">みんなの投稿</a></li>
-                        <li><a href="/upload">投稿の作成</a></li>
+                        <li><a href="/board">みんなの投稿</a></li>
+                        <li><a href="/board/create">投稿の作成</a></li>
                         @guest
                         <li><a href="{{ route('login') }}">Login</a></li>
                         <li><a href="{{ route('register') }}">Register</a></li>

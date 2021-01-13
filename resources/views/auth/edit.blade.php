@@ -14,9 +14,11 @@
                 </ul>
                 @endif
                 <div class="input-group">
-                    <form action="/update" method="post">
+                    <form action="/board/{id}" method="post">
+                        {{method_field('PATCH')}}
+
                         {{ csrf_field() }}
-                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                        <input type="hidden" name="user_id" value="{{Auth::id()}}">
                         <input type="hidden" name="id" value="{{$form->id}}">
                         <h2>タイトル</h2>
                         <input class="form-control" type="text" name="title" value="{{$form->title}}">

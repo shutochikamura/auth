@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
+
 
 class Board extends Model
 {
@@ -14,6 +14,10 @@ class Board extends Model
     );
 
     public function getData()
+    {
+        return $this->user->id;
+    }
+    public function getUser()
     {
         return $this->user->name;
     }
