@@ -8,10 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Board extends Model
 {
     protected $guarded = array('id');
-    public static $rules = array(
-        'title' => 'required',
-        'comment' => 'required|max:140'
-    );
+
 
     public function getData()
     {

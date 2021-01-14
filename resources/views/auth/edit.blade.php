@@ -14,17 +14,15 @@
                 </ul>
                 @endif
                 <div class="input-group">
-                    <form action="/board/{id}" method="post">
-                        {{method_field('PATCH')}}
-
-                        {{ csrf_field() }}
+                    <form action="/board/{{$form->id}}" method="post">
+                        @method('PATCH')
+                        @csrf
                         <input type="hidden" name="user_id" value="{{Auth::id()}}">
-                        <input type="hidden" name="id" value="{{$form->id}}">
                         <h2>タイトル</h2>
                         <input class="form-control" type="text" name="title" value="{{$form->title}}">
                         <h2>コンテンツ</h2>
                         <textarea class="form-control" type="text" name="comment">{{$form->comment}}</textarea>
-                        <input class="btn bg-primary" type="submit" name="send" value="編集完了">
+                        <input class="btn bg-primary" type="submit" value="編集完了">
                     </form>
                 </div>
 

@@ -21,14 +21,14 @@
                             @if($item->getData() === Auth::id())
                             <td>
                                 <form action="/board/{{$item->id}}" method="get">
-                                    {{ csrf_field() }}
+                                    @csrf
                                     <input class="btn bg-primary " type="submit" name="edit" value="編集">
                                 </form>
                             </td>
                             <td class="delete">
                                 <form action="/board/{{$item->id}}" method="post">
-                                    {{method_field('DELETE')}}
-                                    {{csrf_field()}}
+                                    @method('DELETE')
+                                    @csrf
                                     <input class="btn remove" type="submit" name="delete" value="削除">
                                 </form>
                             </td>

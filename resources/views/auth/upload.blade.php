@@ -16,13 +16,13 @@
 
                 <div class="input-group">
                     <form action="/board" method="post">
-                        {{csrf_field()}}
-                        <input class="textarea" type="hidden" name="user_id" value="{{Auth::id()}}">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{Auth::id()}}">
                         <h2>タイトル</h2>
                         <input class="form-control" type="text" name="title" value="{{old('title')}}">
                         <h2>コンテンツ</h2>
                         <textarea class="form-control" type="text" name="comment" value="">{{old('comment')}}</textarea>
-                        <input class="btn bg-primary" type="submit" name="send" value="投稿">
+                        <input class="btn bg-primary" type="submit" value="投稿">
                     </form>
                 </div>
 
