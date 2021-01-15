@@ -22,7 +22,7 @@
                         <input class="form-control" type="text" name="title" value="{{$form->title}}">
                         <h2>コンテンツ</h2>
                         <textarea class="form-control" type="text" name="comment">{{$form->comment}}</textarea>
-                        <input class="btn bg-primary" type="submit" value="編集完了">
+                        <input class="btn bg-primary" type="submit" value="変更">
                     </form>
                 </div>
 

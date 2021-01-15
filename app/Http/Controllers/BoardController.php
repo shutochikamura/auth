@@ -12,31 +12,30 @@ class BoardController extends Controller
     public function index()
     {
         $items = Board::all();
-        return view('auth.index', ['items' => $items]);
+        return view('board.index', compact('items'));
     }
 
 
     public function create()
     {
-        return view('auth.upload');
+        return view('board.add');
     }
 
 
     public function store(BoardRequest $request)
     {
-        $validated = $request->validated();
         $post = new Board;
         $form = $request->all();
         unset($form['_token']);
         $post->fill($form)->save();
-        return redirect('/board')->with($validated);
+        return redirect('/board');
     }
 
 
     public function show($id)
     {
-        $post = Board::find($id);
-        return view('/auth.edit', ['form' => $post]);
+        $form = Board::find($id);
+        return view('/board.edit', compact('form'));
     }
 
 
@@ -47,12 +46,11 @@ class BoardController extends Controller
 
     public function update(BoardRequest $request, $id)
     {
-        $validated = $request->validated();
         $post = Board::find($id);
         $form = $request->all();
         unset($form['_token']);
         $post->fill($form)->save();
-        return redirect('/board')->with($validated);
+        return redirect('/board');
     }
 
 
