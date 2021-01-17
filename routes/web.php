@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('board', 'BoardController');
+
+Route::post('board/{id}/likes', 'LikeController@store')->name('likes');
+Route::post('board/{id}/unlikes', 'LikeController@destroy')->name('unlikes');

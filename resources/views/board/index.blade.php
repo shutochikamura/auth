@@ -15,8 +15,9 @@
                         <tr>
                             <th class=" comment">{{$item->comment}}</th>
                         </tr>
+                    </table>
+                    <table>
                         <tr>
-
                             <th class="author">投稿者：{{$item->getUser()}}</th>
                             @if($item->getData() === Auth::id())
                             <td>
@@ -33,6 +34,20 @@
                                 </form>
                             </td>
                             @endif
+                            <th>
+                                @if($item->users()->where('user_id', Auth::id())->exists())
+                                <form action="{{route('unlikes', $item)}}" method="post">@csrf
+                                    <input type="submit" value="&#9829" class="heart">
+                                </form>
+                                @else
+                                <form action="{{route('likes', $item)}}" method="post">@csrf
+                                    <input type="submit" value="&#9825" class="heart">
+                                </form>
+                                @endif
+                            </th>
+                            <td>
+                                <p class="count">: {{$item->users()->count()}}</p>
+                            </td>
                         </tr>
                     </table>
                 </div>

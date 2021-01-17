@@ -39,9 +39,6 @@ class BoardController extends Controller
     }
 
 
-    public function edit(Request $request)
-    {
-    }
 
 
     public function update(BoardRequest $request, $id)

@@ -84,6 +84,18 @@
         .author {
             font-size: 20px;
         }
+
+        .heart {
+            font-size: 30px;
+            margin: 0 8px 0 16px;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+
+        .count {
+            font-size: 30px;
+        }
     </style>
 </head>
 
