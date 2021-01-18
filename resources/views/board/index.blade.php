@@ -36,11 +36,15 @@
                             @endif
                             <th>
                                 @if($item->users()->where('user_id', Auth::id())->exists())
-                                <form action="{{route('unlikes', $item)}}" method="post">@csrf
+                                <form action="/like/{{$item->id}}" method="post">
+                                    @csrf
+                                    @method('delete')
                                     <input type="submit" value="&#9829" class="heart">
                                 </form>
                                 @else
-                                <form action="{{route('likes', $item)}}" method="post">@csrf
+                                <form action="/like/{{$item->id}}" method="post">
+                                    @csrf
+                                    @method('patch')
                                     <input type="submit" value="&#9825" class="heart">
                                 </form>
                                 @endif

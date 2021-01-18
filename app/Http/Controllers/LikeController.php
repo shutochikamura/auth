@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth as FacadesAuth;
 class LikeController extends Controller
 {
 
-    public function store(Board $item, $id)
+    public function update(Board $item, $id)
     {
         $item = Board::find($id);
 
